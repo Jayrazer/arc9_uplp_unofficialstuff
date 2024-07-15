@@ -8,8 +8,9 @@ SWEP.Spawnable = true
 SWEP.Slot = 1 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "629 Night Hunter"
-SWEP.Description = ARC9:GetPhrase("uplp_weapon_deagle_desc")
+SWEP.PrintName = "629PC"
+SWEP.Description = [[A classic revolver updated to modern standards. The 629 is a newer variant of the popular M29, a weapon made famous by its appearance in movies. 
+The PC model is heavily customized with improved grips and a picatinny rail on the barrel.]]
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_pistol") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_pistol") -- In the Spawnmenu
@@ -27,7 +28,7 @@ SWEP.Trivia = {
 SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
     [ ARC9:GetPhrase( "uplp_assets" ) ] = "Kaan, TastyTony",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, Darsu",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd",
     [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th",
     [ ARC9:GetPhrase( "uplp_general" ) ] = "speedonerd",
 }
@@ -45,6 +46,8 @@ SWEP.TracerSize = 1
 SWEP.ShellModel = "models/weapons/arc9/uplp/shells/shell_50ae.mdl"
 SWEP.ShellScale = 1.65
 SWEP.ShellPitch = 90
+SWEP.NoShellEject = true
+SWEP.NoShellEjectManualAction = true
 
 SWEP.CaseEffectQCA = 2
 SWEP.CamQCA = 3
@@ -180,7 +183,11 @@ SWEP.RPM = 125 -- How fast gun shoot
 SWEP.Num = 1 -- How many bullets shot at once
 
 SWEP.Firemodes = {
-    { Mode = 1 }, -- Semi
+    { 
+	Mode = 1,
+	PrintName = "DACT"	
+	}, -- Semi
+	
 }
 
 SWEP.ShootPitch = 90
@@ -246,23 +253,23 @@ SWEP.ShootSound = {
     pathUT .. "fire-06.ogg",
 }
 
---SWEP.DistantShootSound = {
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-01.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-02.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-03.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-04.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-05.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-ext-06.ogg"
---}
+SWEP.DistantShootSound = {
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-01.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-02.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-03.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-04.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-05.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-ext-06.ogg"
+}
 
---SWEP.DistantShootSoundIndoor = {
-	--pathUT .. "tails/fire-dist-50ae-pistol-int-01.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-int-02.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-int-03.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-int-04.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-int-05.ogg",
-    --pathUT .. "tails/fire-dist-50ae-pistol-int-06.ogg"
---}
+SWEP.DistantShootSoundIndoor = {
+	pathUT .. "tails/fire-dist-50ae-pistol-int-01.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-int-02.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-int-03.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-int-04.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-int-05.ogg",
+    pathUT .. "tails/fire-dist-50ae-pistol-int-06.ogg"
+}
 
 local mech = {
     pathUT .. "resettrigger.ogg",
@@ -335,7 +342,8 @@ SWEP.Animations = {
         Source = "ready",
         Mult = 1.1,
         EventTable = {
-            { s = "uplp_urban_temp/57/draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
+            { s = pathUT .. "draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
+            { s = pathUT .. "cylinder_in.ogg", t = 5 / 60, c = ca, v = 0.8 },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -351,7 +359,7 @@ SWEP.Animations = {
 		MinProgress = 0.65,
 		FireASAP = true,
         EventTable = {
-            { s = "uplp_urban_temp/57/draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
+            { s = pathUT .. "draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -376,6 +384,14 @@ SWEP.Animations = {
         --ShellEjectAt = 0.01,
         EventTable = { { s = mech, t = 0, v = 0.6 } },
     },
+	
+    ["dryfire"] = {
+        Source = "dryfire",
+        -- Time = 1,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = pathUT .. "drophammer.ogg", t = 1 / 60, v = 0.6 } },
+        EventTable = { { s = mech, t = 5 / 60, v = 0.6 } },
+    },
 
     -- Reloads --
 
@@ -386,7 +402,13 @@ SWEP.Animations = {
 		RefillProgress = 0.6,
 		FireASAP = true,
         EventTable = {
-            { s = pathUTC .. "pistol_rattle_2.ogg", t = 0 / 60, c = ca },
+            { s = pathUT .. "rattle.ogg", t = 0 / 60, c = ca },
+            { s = pathUT .. "cylinder_out.ogg", t = 15 / 60, c = ca },
+            { s = pathUT .. "extractor1.ogg", t = 26 / 60, c = ca },
+            { s = pathUT .. "extractor2.ogg", t = 28 / 60, c = ca },
+            { s = pathUT .. "cylinder_extract.ogg", t = 35 / 60, c = ca },
+            { s = pathUT .. "speedloader.ogg", t = 95 / 60, c = ca },
+            { s = pathUT .. "cylinder_in.ogg", t = 126 / 60, c = ca },
             {hide = 1, t = 0},
             {hide = 0, t = 0.2},
             {hide = 2, t = 1.44}
@@ -443,7 +465,7 @@ local defatt2 = "entities/uplp_attachements/def/"
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_optic"),
-        Category = {"uplp_optic_small"},
+        Category = {"uplp_optic_small", "uplp_optic_mid"},
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(6.5, -3.6, 0),
