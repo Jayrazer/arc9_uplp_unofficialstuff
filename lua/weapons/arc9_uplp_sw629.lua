@@ -19,7 +19,7 @@ SWEP.Trivia = {
     [ ARC9:GetPhrase( "uplp_realname" ) ] = "S&W Model 629 Stealth Hunter",
 
     [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "Smith & Wesson",
-    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ".357 Magnum",
+    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ".44 Magnum",
     [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Double Action",
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1978", "2020" ),
