@@ -1,4 +1,4 @@
-local iconfolder = "entities/uplp_attachements/deagle/"
+local iconfolder = "entities/uplp_attachements/sw629/"
 
 -------------------------------------------
 -- Long Barrel
@@ -9,7 +9,7 @@ ATT.PrintName = "Long Barrel"
 ATT.CompactName = "Long"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "brcl.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "uplp_sw_barrel_long.png", "mips smooth")
 ATT.Category = "uplp_sw_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -31,7 +31,7 @@ ATT.PrintName = "Short Barrel"
 ATT.CompactName = "Short"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "brcl.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "uplp_sw_barrel_short.png", "mips smooth")
 ATT.Category = "uplp_sw_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -53,7 +53,7 @@ ATT.PrintName = "Smooth Grip"
 ATT.CompactName = "Smooth"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "tacgrip.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "uplp_sw_grip_smooth.png", "mips smooth")
 ATT.Category = "uplp_sw_grip"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 

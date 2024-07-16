@@ -210,9 +210,9 @@ SWEP.NPCWeight = 60
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-     Pos = Vector(-2.695, -0, 0.85),
+     Pos = Vector(-2.695, -1, 0.85),
      Ang = Angle(0.05, 0, 0.2),
-     Magnification = 1.1,
+     Magnification = 1,
      ViewModelFOV = 70,
 }
 
@@ -443,11 +443,15 @@ SWEP.Animations = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local eles = data.elements
     local mdl = data.model
-    -- if eles["uplp_ar15_reciever_m16"] or eles["uplp_ar15_reciever_45acp"] then
-        -- if eles["uplp_optic_small"] or eles["uplp_optic_mid"] or eles["uplp_optic_big"] then
-            -- mdl:SetBodygroup(1,1)
-        -- end
-    -- end
+    if eles["uplp_sw_barrel_long"] then
+        if eles["uplp_optic_small"] or eles["uplp_optic_mid"] then
+            mdl:SetBodygroup(4,1)
+        else
+			mdl:SetBodygroup(4,0)
+		end
+	else
+		mdl:SetBodygroup(4,0)
+    end
 end
 
 SWEP.AttachmentElements = {
@@ -455,13 +459,14 @@ SWEP.AttachmentElements = {
     ["uplp_sw_grip_big"] = { Bodygroups = { { 2, 1 } } },
 
     ["uplp_sw_barrel_long"] = { Bodygroups = { { 1, 1 } }, AttPosMods = {
-		    [1] = { Pos = Vector(6, -3.7, 0), },
-		    [4] = { Pos = Vector(9, -2.1, 0), },
+		    [1] = { Pos = Vector(6, -3.9, 0), },
+		    [5] = { Pos = Vector(13, -3, -0.4), },
 		},
 	},
 	
 	["uplp_sw_barrel_short"] = { Bodygroups = { { 1, 2 } }, AttPosMods = {
 		    [4] = { Pos = Vector(7, -2.1, 0), },
+		    [5] = { Pos = Vector(7, -2.9, -0.45), },
 		},
 	},
 
@@ -484,7 +489,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
         Category = {"uplp_sw_barrel"},
-        DefaultIcon = Material(defatt2 .. "deagbr.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "629br.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(5, -2.8, 0),
         Ang = Angle(0, 0, 0),
@@ -514,8 +519,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "body",
-        Pos = Vector(0.55, -1.9, 8.5),
-        Ang = Angle(90, 0, -90),
+        Pos = Vector(10, -3, -0.45),
+        Ang = Angle(0, 0, -90),
     },
 
     -- here to not make presets bad
