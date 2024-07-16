@@ -300,6 +300,7 @@ SWEP.ReloadHideBoneTables = {
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
+		Time = 1,
         EventTable = {
             {hide = 1, t = 0},
         },
