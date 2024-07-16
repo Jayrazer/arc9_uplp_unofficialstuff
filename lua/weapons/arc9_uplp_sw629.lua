@@ -451,7 +451,7 @@ SWEP.AttachmentElements = {
 	},
 	
 	["uplp_sw_barrel_short"] = { Bodygroups = { { 1, 2 } }, AttPosMods = {
-		    [4] = { Pos = Vector(7, -2.1, 0), },
+		    --[4] = { Pos = Vector(7, -2.1, 0), },
 		    [5] = { Pos = Vector(7, -2.9, -0.45), },
 		},
 	},
@@ -493,7 +493,7 @@ SWEP.Attachments = {
         Category = {"uplp_tac_pistol"},
         ExcludeElements = {"notac"},
         Bone = "body",
-        Pos = Vector(8, -2.1, 0),
+        Pos = Vector(5.6, -2.1, 0),
         Ang = Angle(0, 0, 90),
 		Scale = 0.85
     },
