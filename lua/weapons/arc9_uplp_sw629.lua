@@ -56,14 +56,14 @@ SWEP.CamOffsetAng = Angle(0, 0, 90)
 
 ---- View & Worldmodel
 SWEP.ViewModel = "models/weapons/arc9/uplp_unofficial/sw629.mdl"
-SWEP.WorldModel = "models/weapons/arc9/uplp_unofficial/sw629.mdl"
+SWEP.WorldModel = "models/weapons/arc9/uplp_unofficial/w_sw629.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 -- SWEP.TPIKParentToSpine4 = true
 -- SWEP.WorldModelMirror = "models/weapons/arc9/c_uplp_deagle.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-9, 3, -5),
+    Pos = Vector(-6.3, 3.5, -6),
     Ang = Angle(0, 0, 180),
     TPIKPos = Vector(-16, 3, -1),
     TPIKAng = Angle(-5, 0, 180),
@@ -79,7 +79,7 @@ SWEP.ActivePos = Vector(-0.1, -0.2, -0.1)
 SWEP.ActiveAng = Angle(0, 0, -3)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_357
 
 ---- Weapon Stats and Behaviour
 -- Damage
