@@ -13,12 +13,36 @@ ATT.Icon = Material(iconfolder .. "brcl.png", "mips smooth")
 ATT.Category = "uplp_sw_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.ActivateElements = {"uplp_sw_barrel_long", "nooptic"}
+ATT.ActivateElements = {"uplp_sw_barrel_long"}
 
-ATT.AimDownSightsTimeMult = 1.2
-ATT.RecoilSideMult = 0.6
+ATT.AimDownSightsTimeMult = 1.25
+ATT.SprintToFireTimeMult = 1.15
+ATT.RecoilSideMult = 0.9
+ATT.RangeMaxMult = 1.05
 
 ARC9.LoadAttachment(ATT, "uplp_629_barrel_long")
+
+-------------------------------------------
+-- Short Barrel
+
+ATT = {}
+
+ATT.PrintName = "Short Barrel"
+ATT.CompactName = "Short"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolder .. "brcl.png", "mips smooth")
+ATT.Category = "uplp_sw_barrel"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_sw_barrel_short", "nooptic"}
+
+ATT.AimDownSightsTimeMult = 0.85
+ATT.SprintToFireTimeMult = 0.9
+ATT.RecoilSideMult = 1.5
+ATT.RangeMaxMult = 0.9
+
+ARC9.LoadAttachment(ATT, "uplp_629_barrel_short")
 
 -------------------------------------------
 -- Smooth Grip

@@ -28,12 +28,13 @@ SWEP.Trivia = {
 SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
     [ ARC9:GetPhrase( "uplp_assets" ) ] = "Kaan, TastyTony",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, speedonerd",
     [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th",
     [ ARC9:GetPhrase( "uplp_general" ) ] = "speedonerd",
 }
 SWEP.StandardPresets = {
-
+"[Ranger's Friend]XQAAAQCiAAAAAAAAAAA9iIIiM7tuo1AtUBf3wUZrgpRXm4Oq12NPwGc4y8fR9Bv0KK2IXv7s96vYouDGoM4PRjVGGtot1YjJ1aoE5wDBa9vffhVG5eEM05YxAZarueVnUjsvmx2SPJhI00syQYgA",
+"[629PD]XQAAAQCKAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAT6/QWdBdH8vRHAEtTT0QDehhNXJlNKdCM6qoRie/Fry8GblYMr+haWx4cShSjY6rPz9r376n2jG9QU"
 }
 
 ---- Muzzle Effects, Shell Effects, Camera
@@ -178,17 +179,19 @@ SWEP.AimDownSightsTime = 0.25 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.2 -- Time it takes to fully enter sprint
 
 -- Shooting and Firemodes
-SWEP.RPM = 100 -- How fast gun shoot
+SWEP.RPM = 140 -- How fast gun shoot
 
 SWEP.Num = 1 -- How many bullets shot at once
 
 SWEP.Firemodes = {
     { 
 	Mode = 1,
-	PrintName = "DACT"	
-	}, -- Semi
-	
+	PrintName = "DACT",	
+	},	
 }
+
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 
 SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120
@@ -254,21 +257,21 @@ SWEP.ShootSound = {
 }
 
 SWEP.DistantShootSound = {
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-01.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-02.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-03.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-04.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-05.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-ext-06.ogg"
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-01.ogg",
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-02.ogg",
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-03.ogg",
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-04.ogg",
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-05.ogg",
+    pathUT .. "tails/fire-dist-44mag-pistol-ext-06.ogg"
 }
 
 SWEP.DistantShootSoundIndoor = {
-	pathUT .. "tails/fire-dist-50ae-pistol-int-01.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-int-02.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-int-03.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-int-04.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-int-05.ogg",
-    pathUT .. "tails/fire-dist-50ae-pistol-int-06.ogg"
+	pathUT .. "tails/fire-dist-int-shotgun-01.ogg",
+    pathUT .. "tails/fire-dist-int-shotgun-02.ogg",
+    pathUT .. "tails/fire-dist-int-shotgun-03.ogg",
+    pathUT .. "tails/fire-dist-int-shotgun-04.ogg",
+    pathUT .. "tails/fire-dist-int-shotgun-05.ogg",
+    pathUT .. "tails/fire-dist-int-shotgun-06.ogg"
 }
 
 local mech = {
@@ -288,34 +291,13 @@ local mech = {
 --}
 
 SWEP.HideBones = {
-    "speedloader",
+    "speedreloader",
 }
 
 SWEP.ReloadHideBoneTables = {
     [1] = {
-        "speedloader",
+        "speedreloader",
     },
-    [2] = {
-        "mag",
-        "bullet1",
-        "bullet2",
-        "bullet3",
-        "bullet4",
-        "bullet5",
-        "bullet6",
-        "bullet7",
-    },
-    [3] = {
-        "magb",
-        "mag",
-        "bullet1",
-        "bullet2",
-        "bullet3",
-        "bullet4",
-        "bullet5",
-        "bullet6",
-        "bullet7",
-    }
 }
 
 local thetoggle = {{
@@ -353,7 +335,6 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },
-
     ["draw"] = {
         Source = "draw",
 		MinProgress = 0.65,
@@ -392,13 +373,28 @@ SWEP.Animations = {
         EventTable = { { s = pathUT .. "drophammer.ogg", t = 1 / 60, v = 0.6 } },
         EventTable = { { s = mech, t = 5 / 60, v = 0.6 } },
     },
+	
+    ["trigger"] = {
+        Source = "trigger",
+        Time = 0.05,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = mech, t = 1 / 60, v = 0.6 } },
+    },
+	
+	["untrigger"] = {
+        Source = "untrigger",
+        Time = 0.05,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = mech, t = 1 / 60, v = 0.6 } },
+    },
 
     -- Reloads --
 
     ["reload"] = {
         Source = "reload",
-        MinProgress = 0.95,
+        MinProgress = 0.9,
 		PeekProgress = 0.85,
+		Time = 2.75,
 		RefillProgress = 0.6,
 		FireASAP = true,
         EventTable = {
@@ -407,8 +403,8 @@ SWEP.Animations = {
             { s = pathUT .. "extractor1.ogg", t = 26 / 60, c = ca },
             { s = pathUT .. "extractor2.ogg", t = 28 / 60, c = ca },
             { s = pathUT .. "cylinder_extract.ogg", t = 35 / 60, c = ca },
-            { s = pathUT .. "speedloader.ogg", t = 95 / 60, c = ca },
-            { s = pathUT .. "cylinder_in.ogg", t = 126 / 60, c = ca },
+            { s = pathUT .. "speedloader.ogg", t = 91 / 60, c = ca },
+            { s = pathUT .. "cylinder_in.ogg", t = 119 / 60, c = ca },
             {hide = 1, t = 0},
             {hide = 0, t = 0.2},
             {hide = 2, t = 1.44}
@@ -424,7 +420,8 @@ SWEP.Animations = {
     -- Inspecc --
 
     ["inspect"] = {
-        Source = "ref",
+        Source = "inspect",
+		Time = 4.4,
         EventTable = {
             { s = pathUTC .. "cloth_2.ogg", t = 5 / 30, c = ca },
             { s = pathUTC .. "movement-pistol-02.ogg", t = 52 / 30, c = ca },
@@ -455,7 +452,16 @@ SWEP.AttachmentElements = {
 
     ["uplp_sw_grip_big"] = { Bodygroups = { { 2, 1 } } },
 
-    ["uplp_sw_barrel_long"] = { Bodygroups = { { 1, 1 } } },
+    ["uplp_sw_barrel_long"] = { Bodygroups = { { 1, 1 } }, AttPosMods = {
+		    [1] = { Pos = Vector(6, -3.7, 0), },
+		    [4] = { Pos = Vector(9, -2.1, 0), },
+		},
+	},
+	
+	["uplp_sw_barrel_short"] = { Bodygroups = { { 1, 2 } }, AttPosMods = {
+		    [4] = { Pos = Vector(7, -2.1, 0), },
+		},
+	},
 
 }
 
@@ -468,6 +474,7 @@ SWEP.Attachments = {
         Category = {"uplp_optic_small", "uplp_optic_mid"},
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "body",
+        ExcludeElements = {"nooptic"},
         Pos = Vector(6.5, -3.6, 0),
         ExtraSightDistance = 4,
         Ang = Angle(0, 0, -90),
@@ -477,33 +484,9 @@ SWEP.Attachments = {
         Category = {"uplp_sw_barrel"},
         DefaultIcon = Material(defatt2 .. "deagbr.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(8, -2.75, 0),
+        Pos = Vector(5, -2.8, 0),
         Ang = Angle(0, 0, 0),
     },
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
-        --Category = {"uplp_deag_muzzle"},
-        --Bone = "body",
-        --Pos = Vector(0, -2.5, 10),
-        --Ang = Angle(90, 90, 180),
-        --ExcludeElements = {"nomuz"}
-    --},
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_magazine"),
-        --Category = {"uplp_deag_mag"},
-        --DefaultIcon = Material(defatt .. "mag_pistol.png", "mips smooth"),
-        --Bone = "body",
-        --Pos = Vector(0, 2, 0.6),
-        --Ang = Angle(90, 90, 180),
-    --},
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_internals"),
-        --Category = {"uplp_deag_trig"},
-        --DefaultIcon = Material(defatt2 .. "trigger.png", "mips smooth"),
-        --Bone = "body",
-        --Pos = Vector(0, -0.5, 3),
-        --Ang = Angle(90, 90, 180),
-    --},
     {
         PrintName = ARC9:GetPhrase("uplp_category_pistol_grip"),
         Category = {"uplp_sw_grip"},
@@ -517,30 +500,14 @@ SWEP.Attachments = {
         Category = {"uplp_tac_pistol"},
         ExcludeElements = {"notac"},
         Bone = "body",
-        Pos = Vector(10, -2.2, 0),
+        Pos = Vector(8, -2.1, 0),
         Ang = Angle(0, 0, 90),
+		Scale = 0.85
     },
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_appearance"),
-        --Category = {"uplp_deagle_skin"},
-        --DefaultIcon = Material(defatt .. "skin.png", "mips smooth"),
-        --Bone = "body",
-        --Pos = Vector(0, 0, -1),
-        --Ang = Angle(90, 90, 180),
-        --CosmeticOnly = true,
-    --},
 
 
 
     -- Cosmetic shit
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        --StickerModel = "models/weapons/arc9/uplp/stickers/deagle_1.mdl",
-        --Category = "stickers",
-        --Bone = "body",
-        --Pos = Vector(0.55, -2.5, 2),
-        --Ang = Angle(90, 0, -90),
-    --},
     {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
@@ -566,9 +533,9 @@ SWEP.Attachments = {
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
 
-    --if att["uplp_deagle_skin_gold"] then
-        --name = ARC9:GetPhrase("uplp_weapon_deagle_gold")
-    --end
+    if att["uplp_sw_barrel_short"] and att["uplp_sw_grip_big"] then
+        name = "629PD"
+    end
 
     return name
 end
