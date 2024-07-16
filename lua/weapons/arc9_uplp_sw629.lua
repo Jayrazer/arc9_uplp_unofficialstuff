@@ -280,15 +280,17 @@ local mech = {
 
 ---- Animations
 -- HideBones, BulletBones, etc.
---SWEP.BulletBones = {
-    --[1] = "bullet1",
-    --[2] = "bullet2",
-    --[3] = "bullet3",
-    --[4] = "bullet4",
-    --[5] = "bullet5",
-    --[6] = "bullet6",
-    --[7] = "bullet7",
---}
+SWEP.BulletBodygroups = {
+    [1] = {3, 6},
+    [2] = {3, 5},
+    [3] = {3, 4},
+    [4] = {3, 3},
+    [5] = {3, 2},
+    [6] = {3, 1},
+	[7] = {3, 0}
+}
+
+SWEP.DefaultBodygroups = "0000"
 
 SWEP.HideBones = {
     "speedreloader",
@@ -395,7 +397,7 @@ SWEP.Animations = {
         MinProgress = 0.9,
 		PeekProgress = 0.85,
 		Time = 2.75,
-		RefillProgress = 0.6,
+		RefillProgress = 0.75,
 		FireASAP = true,
         EventTable = {
             { s = pathUT .. "rattle.ogg", t = 0 / 60, c = ca },
