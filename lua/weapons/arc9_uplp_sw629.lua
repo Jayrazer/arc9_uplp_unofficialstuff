@@ -233,12 +233,6 @@ SWEP.CustomizeSnapshotFOV = 70
 -- Dropped Magazine
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/deagle_mag_std.mdl"
-SWEP.DropMagazineTime = 0.66
-SWEP.DropMagazineQCA = 4
-SWEP.DropMagazinePos = Vector(0, 0, 0)
-SWEP.DropMagazineAng = Angle(80, 90, 90)
-SWEP.DropMagazineVelocity = Vector(0, -40, 0)
 
 ---- Sounds
 
@@ -301,17 +295,6 @@ SWEP.ReloadHideBoneTables = {
         "speedreloader",
     },
 }
-
-local thetoggle = {{
-    s = {
-        "arc9/toggles/flashlight_laser_toggle_off_01.ogg",
-        "arc9/toggles/flashlight_laser_toggle_off_02.ogg",
-        "arc9/toggles/flashlight_laser_toggle_off_03.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_01.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_02.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
-    }, t = 0
-}}
 
 -- Animations
 SWEP.Animations = {
@@ -482,8 +465,8 @@ SWEP.Attachments = {
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "body",
         ExcludeElements = {"nooptic"},
-        Pos = Vector(6.5, -3.6, 0),
-        ExtraSightDistance = 4,
+        Pos = Vector(5.5, -3.6, 0),
+        ExtraSightDistance = 2,
         Ang = Angle(0, 0, -90),
     },
     {
