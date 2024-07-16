@@ -85,18 +85,18 @@ SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_REVOLVER
 
 ---- Weapon Stats and Behaviour
 -- Damage
-SWEP.DamageMax = 58
+SWEP.DamageMax = 50
 SWEP.DamageMin = 35
 SWEP.DamageType = DMG_BULLET
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
+    [HITGROUP_HEAD] = 2.5,
     [HITGROUP_CHEST] = 1.25,
     [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 1,
-    [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 0.9,
-    [HITGROUP_RIGHTLEG] = 0.9,
+    [HITGROUP_LEFTARM] = 0.85,
+    [HITGROUP_RIGHTARM] = 0.85,
+    [HITGROUP_LEFTLEG] = 0.75,
+    [HITGROUP_RIGHTLEG] = 0.75,
 }
 
 
@@ -104,8 +104,8 @@ SWEP.Penetration = 50 -- Units of wood that can be penetrated
 SWEP.ImpactForce = 15 -- How much kick things will have when hit
 
 -- Range
-SWEP.RangeMin = 6 / ARC9.HUToM
-SWEP.RangeMax = 50 / ARC9.HUToM
+SWEP.RangeMin = 8 / ARC9.HUToM
+SWEP.RangeMax = 60 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 410 * 39.37
