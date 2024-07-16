@@ -9,8 +9,10 @@ SWEP.Slot = 1 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "629PC"
-SWEP.Description = [[A classic revolver updated to modern standards. The 629 is a newer variant of the popular M29, a weapon made famous by its appearance in movies. 
-The PC model is heavily customized with improved grips and a picatinny rail on the barrel.]]
+SWEP.Description = [[A classic revolver updated to modern standards. The 629 is a newer variant of the M29, a weapon made famous by its appearance in movies. 
+When it was first introduced it was the most powerful handgun in the world, though it has since been outclassed by guns chambered for larger calibers.
+The PC model is heavily customized with improved grips and a picatinny rail on the barrel.
+]]
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_pistol") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_pistol") -- In the Spawnmenu
@@ -22,7 +24,7 @@ SWEP.Trivia = {
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ".44 Magnum",
     [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Double Action",
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
-    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1978", "2020" ),
+    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1978" ),
 }
 
 SWEP.Credits = {
@@ -78,13 +80,13 @@ SWEP.BobSettingsSpeed = {0.9, 1, 0.92,    1, 0.92, 0.8}
 SWEP.ActivePos = Vector(-0.1, -0.2, -0.1)
 SWEP.ActiveAng = Angle(0, 0, -3)
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_357
+SWEP.NonTPIKAnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_REVOLVER
 
 ---- Weapon Stats and Behaviour
 -- Damage
-SWEP.DamageMax = 64
-SWEP.DamageMin = 22
+SWEP.DamageMax = 58
+SWEP.DamageMin = 35
 SWEP.DamageType = DMG_BULLET
 
 SWEP.BodyDamageMults = {
@@ -98,12 +100,12 @@ SWEP.BodyDamageMults = {
 }
 
 
-SWEP.Penetration = 45 -- Units of wood that can be penetrated
-SWEP.ImpactForce = 12 -- How much kick things will have when hit
+SWEP.Penetration = 50 -- Units of wood that can be penetrated
+SWEP.ImpactForce = 15 -- How much kick things will have when hit
 
 -- Range
-SWEP.RangeMin = 3 / ARC9.HUToM
-SWEP.RangeMax = 45 / ARC9.HUToM
+SWEP.RangeMin = 6 / ARC9.HUToM
+SWEP.RangeMax = 50 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 410 * 39.37
@@ -118,11 +120,11 @@ SWEP.ClipSize = 6
 
 -- Recoil
 SWEP.Recoil = 4.5
-SWEP.RecoilUp = 1
-SWEP.RecoilSide = 0.3
+SWEP.RecoilUp = 1.1
+SWEP.RecoilSide = 0.4
 
-SWEP.RecoilRandomUp = 0.4
-SWEP.RecoilRandomSide = 0.2
+SWEP.RecoilRandomUp = 0.45
+SWEP.RecoilRandomSide = 0.25
 
 SWEP.RecoilRise = 10
 SWEP.MaxRecoilBlowback = 0
@@ -153,11 +155,11 @@ SWEP.VisualRecoilMultHipFire = 1
 -- SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.006
-SWEP.SpreadAddHipFire = 0.03
+SWEP.Spread = 0.0035
+SWEP.SpreadAddHipFire = 0.045
 
-SWEP.SpreadAddRecoil = 0.02
-SWEP.SpreadAddMove = 0.01
+SWEP.SpreadAddRecoil = 0.025
+SWEP.SpreadAddMove = 0.02
 SWEP.SpreadAddMidAir = 0.05
 
 SWEP.SpreadMultSights = 1
@@ -175,11 +177,11 @@ SWEP.SpeedMultSights = 0.85 -- When aiming
 
 SWEP.BarrelLength = 24
 
-SWEP.AimDownSightsTime = 0.25 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.2 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.3 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.25 -- Time it takes to fully enter sprint
 
 -- Shooting and Firemodes
-SWEP.RPM = 140 -- How fast gun shoot
+SWEP.RPM = 135 -- How fast gun shoot
 
 SWEP.Num = 1 -- How many bullets shot at once
 
@@ -202,7 +204,7 @@ SWEP.HoldTypeSprint = "pistol"
 SWEP.HoldTypeHolstered = nil
 SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"
-SWEP.HoldTypeNPC = "pistol"
+SWEP.HoldTypeNPC = "revolver"
 
 -- NPC Info
 SWEP.NPCWeaponType = "weapon_357"

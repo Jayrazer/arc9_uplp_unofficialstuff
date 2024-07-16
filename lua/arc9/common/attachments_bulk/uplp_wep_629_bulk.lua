@@ -15,10 +15,9 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_sw_barrel_long"}
 
-ATT.AimDownSightsTimeMult = 1.25
-ATT.SprintToFireTimeMult = 1.15
-ATT.RecoilSideMult = 0.9
-ATT.RangeMaxMult = 1.05
+ATT.AimDownSightsTimeMult = 1.15
+ATT.RecoilMult = 0.9
+ATT.RecoilAutoControlMult = 1.05
 
 ARC9.LoadAttachment(ATT, "uplp_629_barrel_long")
 
@@ -38,9 +37,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_sw_barrel_short", "nooptic"}
 
 ATT.AimDownSightsTimeMult = 0.85
-ATT.SprintToFireTimeMult = 0.9
-ATT.RecoilSideMult = 1.5
-ATT.RangeMaxMult = 0.9
+ATT.RecoilMult = 1.2
 
 ARC9.LoadAttachment(ATT, "uplp_629_barrel_short")
 
@@ -59,7 +56,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_sw_grip_big"}
 
-ATT.AimDownSightsTimeMult = 0.9
-ATT.RecoilUpMult = 1.15
+ATT.AimDownSightsTimeMult = 0.85
+ATT.RecoilUpMult = 1.1
 
 ARC9.LoadAttachment(ATT, "uplp_629_grip_big")
