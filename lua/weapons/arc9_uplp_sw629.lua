@@ -152,17 +152,17 @@ SWEP.VisualRecoilMultHipFire = 1
 -- SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.007
-SWEP.SpreadAddHipFire = 0.02
+SWEP.Spread = 0.006
+SWEP.SpreadAddHipFire = 0.03
 
-SWEP.SpreadAddRecoil = 0.025
+SWEP.SpreadAddRecoil = 0.02
 SWEP.SpreadAddMove = 0.01
 SWEP.SpreadAddMidAir = 0.05
 
 SWEP.SpreadMultSights = 1
 SWEP.SpreadMultMove = 1
 
-SWEP.RecoilDissipationRate = 4
+SWEP.RecoilDissipationRate = 3
 SWEP.RecoilResetTime = 0.01
 SWEP.RecoilPerShot = 1 / 3
 SWEP.RecoilModifierCap = 1
@@ -178,7 +178,7 @@ SWEP.AimDownSightsTime = 0.25 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.2 -- Time it takes to fully enter sprint
 
 -- Shooting and Firemodes
-SWEP.RPM = 125 -- How fast gun shoot
+SWEP.RPM = 100 -- How fast gun shoot
 
 SWEP.Num = 1 -- How many bullets shot at once
 
@@ -506,7 +506,7 @@ SWEP.Attachments = {
     --},
     {
         PrintName = ARC9:GetPhrase("uplp_category_pistol_grip"),
-        Category = {"uplp_deag_grip"},
+        Category = {"uplp_sw_grip"},
         DefaultIcon = Material(defatt2 .. "argrip.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0, 0.7),
