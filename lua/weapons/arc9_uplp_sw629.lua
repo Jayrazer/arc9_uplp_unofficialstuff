@@ -162,8 +162,8 @@ SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadAddMove = 0.015
 SWEP.SpreadAddMidAir = 0.05
 
-SWEP.SpreadMultSights = 1
-SWEP.SpreadMultMove = 1
+SWEP.SpreadMultSights = 0.5
+SWEP.SpreadMultMove = 0.9
 
 SWEP.RecoilDissipationRate = 3
 SWEP.RecoilResetTime = 0.01
