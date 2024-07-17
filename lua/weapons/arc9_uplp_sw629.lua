@@ -93,10 +93,10 @@ SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2.5,
     [HITGROUP_CHEST] = 1.25,
     [HITGROUP_STOMACH] = 1.25,
-    [HITGROUP_LEFTARM] = 0.95,
-    [HITGROUP_RIGHTARM] = 0.95,
-    [HITGROUP_LEFTLEG] = 0.75,
-    [HITGROUP_RIGHTLEG] = 0.75,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.85,
+    [HITGROUP_RIGHTLEG] = 0.85,
 }
 
 
@@ -105,7 +105,7 @@ SWEP.ImpactForce = 15 -- How much kick things will have when hit
 
 -- Range
 SWEP.RangeMin = 8 / ARC9.HUToM
-SWEP.RangeMax = 60 / ARC9.HUToM
+SWEP.RangeMax = 48 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 410 * 39.37
@@ -155,11 +155,11 @@ SWEP.VisualRecoilMultHipFire = 1
 -- SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.01
+SWEP.Spread = 0.005
 SWEP.SpreadAddHipFire = 0.015
 
-SWEP.SpreadAddRecoil = 0.025
-SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadAddMove = 0.015
 SWEP.SpreadAddMidAir = 0.05
 
 SWEP.SpreadMultSights = 1
