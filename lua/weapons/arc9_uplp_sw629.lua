@@ -477,7 +477,7 @@ SWEP.Attachments = {
         Category = {"uplp_sw_barrel"},
         DefaultIcon = Material(defatt2 .. "629br.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(5, -2.8, 0),
+        Pos = Vector(7, -2.8, 0),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -485,7 +485,7 @@ SWEP.Attachments = {
         Category = {"uplp_sw_grip"},
         DefaultIcon = Material(defatt2 .. "argrip.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 0, 0.7),
+        Pos = Vector(-0.8, 0.25, 0),
         Ang = Angle(90, 90, 180),
     },
     {
