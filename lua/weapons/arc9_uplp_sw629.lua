@@ -30,7 +30,7 @@ SWEP.Trivia = {
 SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
     [ ARC9:GetPhrase( "uplp_assets" ) ] = "Kaan, TastyTony",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, speedonerd",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Urban Coalition",
     [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th",
     [ ARC9:GetPhrase( "uplp_general" ) ] = "speedonerd",
 }
